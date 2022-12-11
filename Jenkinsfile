@@ -18,7 +18,11 @@ pipeline {
 		   sh 'cp -r target/*.jar docker'
            }
         }
-         
+        
+	stage('Build image') {
+  
+          app = docker.build("debasisdana/test")
+        }
         stage('Build docker image') {
            steps {
                script {         
