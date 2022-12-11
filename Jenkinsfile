@@ -19,11 +19,7 @@ pipeline {
            }
         }
         
-	stage('Build image') {
-  
-          app = docker.build("debasisdana/test")
-        }
-        stage('Build docker image') {
+	stage('Build docker image') {
            steps {
                script {         
                  def customImage = docker.build('debasisdana/petclinic', "./docker")
